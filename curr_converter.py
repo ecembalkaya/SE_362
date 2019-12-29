@@ -1,4 +1,5 @@
 import requests 
+import datetime
 
 class Currency_convertor: 
 	rates = {} 
@@ -18,6 +19,7 @@ class Currency_convertor:
 
 f __name__ == "__main__": 
 
+	now = datetime.datetime.now()
 	YOUR_ACCESS_KEY = '62212464071d545dd78f45b57721429c' 
 	url = str.__add__('http://data.fixer.io/api/latest?access_key=', YOUR_ACCESS_KEY) 
 	c = Currency_convertor(url) 
@@ -28,3 +30,4 @@ f __name__ == "__main__":
 
 	c.convert(from_country, to_country, amount) 
 
+	print (now.strftime("Tarih:%d-%m-%Y\nSaat:%H:%M:%S"))
